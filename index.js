@@ -184,4 +184,4 @@ function drawLives() {
 }
 
 //setInterval(draw, 10);
-//draw();
+draw();

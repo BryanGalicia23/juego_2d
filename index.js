@@ -1,4 +1,5 @@
 const canvas = document.getElementById("myCanvas");
+const buttonStart = document.getElementById("button-start");
 const context = canvas.getContext("2d");
 var x = canvas.width / 2;
 var y = canvas.height - 30;
@@ -36,6 +37,15 @@ for (c = 0; c < brickColumnCount; c++) {
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
+document.addEventListener("touchmove", touchMoveHandler, false);
+
+function touchMoveHandler(e) {
+  console.log(e);
+  var relativeTouchX = e.changedTouches[0].clientX - canvas.offsetLeft;
+  if (relativeTouchX > 0 && relativeTouchX < canvas.width - paddleWidth / 2) {
+    paddleX = relativeTouchX - paddleWidth / 2;
+  }
+}
 
 function keyDownHandler(e) {
   if (e.keyCode == 39) {

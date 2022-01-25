@@ -38,9 +38,14 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 document.addEventListener("touchmove", touchMoveHandler, false);
+buttonStart.addEventListener("click", startGame, false);
+
+function startGame(e) {
+  e.preventDefault();
+  draw();
+}
 
 function touchMoveHandler(e) {
-  console.log(e);
   var relativeTouchX = e.changedTouches[0].clientX - canvas.offsetLeft;
   if (relativeTouchX > 0 && relativeTouchX < canvas.width - paddleWidth / 2) {
     paddleX = relativeTouchX - paddleWidth / 2;
@@ -183,15 +188,15 @@ function collisionDetection() {
 
 function drawScore() {
   context.font = "16px Arial";
-  context.fillStyle = "#0095DD";
+  context.fillStyle = "#f7df1e";
   context.fillText("Score: " + score, 8, 20);
 }
 
 function drawLives() {
   context.font = "16px Arial";
-  context.fillStyle = "#0095DD";
+  context.fillStyle = "#f7df1e";
   context.fillText("Lives: " + lives, canvas.width - 65, 20);
 }
 
 //setInterval(draw, 10);
-draw();
+//draw();

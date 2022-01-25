@@ -7,8 +7,23 @@ body {
   text-align: center;
 }
 
+nav {
+  background-color: #f7df1e;
+  padding: 1rem;
+  width: 100%;
+}
+
 canvas {
   background: rgb(63, 60, 60);
   display: block;
   margin: 0 auto;
+}
+
+#button-start {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 8%;
+  background-color: #f7df1e;
+  color: #222;
 }
